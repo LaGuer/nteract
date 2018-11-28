@@ -117,41 +117,41 @@ export function appendCellToNotebook(
 export function insertCellAt(
   notebook: ImmutableNotebook,
   cell: NbformatCell,
-  cellID: string,
+  cellId: string,
   index: number
 ): ImmutableNotebook {
-  notebook["cellMap"][cellID] = cell;
-  notebook["cellOrder"][index] = cellID;
+  notebook["cellMap"][cellId] = cell;
+  notebook["cellOrder"][index] = cellId;
   return notebook;
 }
 
 export function insertCellAfter(
   notebook: ImmutableNotebook,
   cell: NbformatCell,
-  cellID: string,
-  priorCellID: string
+  cellId: string,
+  priorCellId: string
 ): ImmutableNotebook {
   return insertCellAt(
     notebook,
     cell,
-    cellID,
-    notebook["cellOrder"].indexOf(priorCellID) + 1
+    cellId,
+    notebook["cellOrder"].indexOf(priorCellId) + 1
   );
 }
 
 // Deprecation Warning: removeCell() is being deprecated. Please use deleteCell() instead
-export function removeCell(notebook: ImmutableNotebook, cellID: string) {
+export function removeCell(notebook: ImmutableNotebook, cellId: string) {
   console.log(
     "Deprecation Warning: removeCell() is being deprecated. Please use deleteCell() instead"
   );
-  delete notebook["cellMap"][cellID];
-  notebook["cellOrder"] = notebook["cellOrder"].filter(id => id !== cellID);
+  delete notebook["cellMap"][cellId];
+  notebook["cellOrder"] = notebook["cellOrder"].filter(id => id !== cellId);
   return notebook;
 }
 
-export function deleteCell(notebook: ImmutableNotebook, cellID: string) {
-  delete notebook["cellMap"][cellID];
-  notebook["cellOrder"] = notebook["cellOrder"].filter(id => id !== cellID);
+export function deleteCell(notebook: ImmutableNotebook, cellId: string) {
+  delete notebook["cellMap"][cellId];
+  notebook["cellOrder"] = notebook["cellOrder"].filter(id => id !== cellId);
   return notebook;
 }
 

@@ -44,8 +44,10 @@ export {
   CellType
 } from "./cells";
 
+// Backwards compatibility
+export { CellId } from "@nteract/types";
+
 export {
-  CellID,
   toJS,
   stringifyNotebook,
   fromJS,

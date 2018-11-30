@@ -12,10 +12,8 @@ import * as v3 from "./v3";
 
 import { Map as ImmutableMap, List as ImmutableList, Record } from "immutable";
 
-import { CellId } from "@nteract/types";
-
 import { ImmutableCell } from "./cells";
-import { JSONType } from "./primitives";
+import { JSONType, CellId } from "./primitives";
 
 export type NotebookRecordParams = {
   cellOrder: ImmutableList<CellId>;

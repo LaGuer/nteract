@@ -3,7 +3,7 @@
  */
 import uuid from "uuid/v4";
 
-import { CellId } from "@nteract/types";
+import { CellId, createCellId } from "./primitives";
 
 import { makeNotebookRecord, ImmutableNotebook } from "./notebook";
 
@@ -35,7 +35,7 @@ export type CellStructure = {
 export const appendCell = (
   cellStructure: CellStructure,
   immutableCell: ImmutableCell,
-  id: string = uuid()
+  id: CellId = createCellId()
 ): CellStructure => ({
   cellOrder: cellStructure.cellOrder.push(id),
   cellMap: cellStructure.cellMap.set(id, immutableCell)

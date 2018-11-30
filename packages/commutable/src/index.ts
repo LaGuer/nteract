@@ -6,7 +6,6 @@
 // Make sure the index.js.flow types stay in sync with this section
 //
 
-// from types
 export * from "./primitives";
 
 // from structures
@@ -43,9 +42,6 @@ export {
   ImmutableCell,
   CellType
 } from "./cells";
-
-// Backwards compatibility
-export { CellId } from "@nteract/types";
 
 export {
   toJS,
